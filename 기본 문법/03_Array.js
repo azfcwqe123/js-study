@@ -14,7 +14,7 @@ const arr2 = ['가', '라', '다', '라', '마'];
 let idx = arr2.indexOf('라');
 
 while(idx !== -1) {
-    arr2.splice(idx, 1);
+    arr2.splice(idx, 1);  // 중간에 있는 배열을 삭제하는 방법
     idx = arr2.indexOf('라');
 }
 
