@@ -10,6 +10,7 @@ console.log(b.name); // a를 바꿨더니 b도 바뀜. 같은 객체를 참조�
 // 얕은 복사 -> ..., concat, slice
 const arr = [{a: '1'}, {b: '2'}];
 const copyArr = [...arr]; // ...은 얕은 복사 연산자
+arr[0].a = 10; // 이렇게하면 copyArr[0].a도 바뀜.
 
 console.log(arr === copyArr); // false
 console.log(arr[0] === copyArr[0]); // true
@@ -22,13 +23,13 @@ const deep = JSON.parse(JSON.stringify(arr2)); // stringify: 객체를 문자열
 console.log(arr2 === deep); // false
 console.log(arr2[0] === deep[0]); // false
 
-// 구조 분해 할당
+// 구조 분해 할당!!
 const obj = {
     t1: 10,
     t2: 20
 };
 
-const {t1, t2} = obj; // (객체는 이름일치 필요함)
+const {t1, t2} = obj; // (객체는 이름일치 필요함).
 console.log(t1 + " " + t2);
 
 // 배열도 가능 (배열은 이름일치 필요 없음)
@@ -46,6 +47,8 @@ const obj2 = {
     }
 };
 
+// 만약 r2도 같이 쓰고 싶다면?
+// const { r1, r2, r2: { r3, r4: { r5 } } } = obj2;
 const {r1, r2:{r3, r4: {r5}}} = obj2;
 
 console.log(r3);
