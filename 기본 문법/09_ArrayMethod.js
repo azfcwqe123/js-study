@@ -5,6 +5,7 @@ arr.forEach((num, idx) => {
     console.log(num + " " + idx);
 })
 
+// map()은 배열의 각 요소를 변형해서 새로운 배열을 만드는 함수
 // map - 1
 const numbers = Array(5).fill(1).map((v, i) => i + 1);
 console.log(numbers); // [ 1, 2, 3, 4, 5 ]
@@ -45,6 +46,7 @@ console.log(numbers6); // [ 3, 5, 7 ]
 const arr6 = [1, 3, 5, 7];
 
 // callback 함수
+// const callback = (v) => {return v > 2;} // 이렇게도 가능
 function callback(v) {
     return v > 2;
 }
