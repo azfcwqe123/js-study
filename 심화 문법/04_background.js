@@ -14,3 +14,5 @@ setTimeout(() => {
     aaa();
     console.log('b');
 }, 0);
+
+// a c c b d d
