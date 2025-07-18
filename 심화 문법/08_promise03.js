@@ -9,11 +9,11 @@ promise
         return 'a';
     })
     .then((data) => {
-        console.log(data);
+        console.log(data); // a
         return 'b';
     })
     .then((data) => {
-        console.log(data);
+        console.log(data); // b
     });
 
-
+    
