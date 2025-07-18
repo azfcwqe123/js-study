@@ -18,4 +18,4 @@ const timerId = setTimeout(() => {
 
 // setTimeOut()은 비동기함수이므로, 밑에 있는 동기 코드가 모두 실행되고 난 뒤 실행된다.
 console.log("함수 실행");
-clearTimeout(timerId);
+clearTimeout(timerId); // 동기 함수 실행중, setTimeout() 실행 취소 함수를 만나 비동기 함수인 timeId은 실행되지 않음.
