@@ -14,6 +14,7 @@ function recurse() {
         console.log("결과: " + i);
         return;
     }
+    // 비동기 함수는 호출 스택이 비워진 뒤에 실행됨.
     setTimeout(recurse, 0); // 현재 호출 스택이 비워지고 나서 실행됨 -> 호출 스택에 recurse()가 2개 이상 쌓이지 않게됨
 }
 
