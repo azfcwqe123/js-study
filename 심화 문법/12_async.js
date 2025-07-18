@@ -9,3 +9,5 @@ async function main() {
 }
 
 main();
+
+// await은 async 함수에서 사용할 수 있음. function 앞에 async가 붙지 않으면 작동하지 않음.
