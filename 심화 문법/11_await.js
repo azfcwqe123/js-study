@@ -21,3 +21,6 @@ await setTimeoutPromise2(1000).then(() => {
 });
 
 console.log("먼저 실행됨");
+
+// await은 프로미스가 resolve() 할 때까지 기다린다.
+// 프로미스가 아닌 비동기 코드에 await을 적용하는것은 의미 없음. 적용되지 않음.
