@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <header>
+        <div>
+            <button>클릭</button>
+        </div>
+    </header>
+
+    <script>
+        document.querySelector('header').addEventListener('click', () => {
+            console.log('hello, event bubbling');
+        })
+    </script>
+</body>
+</html>

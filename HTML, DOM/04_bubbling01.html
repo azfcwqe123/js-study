@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <table border = "1">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+    </table>
+
+    <script>
+        // event.target → 이벤트가 발생한 실제 요소
+        // event.currentTarget → 이벤트 리스너가 걸려 있는 요소
+
+        /*document.querySelector('td').addEventListener('click', () => {
+            console.log('td를 클릭했습니다.');
+        });
+        
+        document.querySelector('tr').addEventListener('click', () => {
+            console.log('tr을 클릭했습니다.');
+        });
+
+        document.querySelector('table').addEventListener('click', () => {
+            console.log('table을 클릭했습니다.');
+        });*/
+
+        /* td 태그만 눌렀는데 부모까지 영향이 감. 버블링 현상 발생. */
+        // td를 클릭했습니다.
+        // tr을 클릭했습니다.
+        // table을 클릭했습니다.
+
+        // -------------------------------------------------------------------------------------------
+        
+        
+        document.querySelector('td').addEventListener('click', (event) => {
+            console.log('td를 클릭했습니다.');
+            console.log(event.target); // 이벤트가 발생한 실제 요소
+            console.log(event.currentTarget); // 이벤트 리스너가 걸려 있는 요소
+        });
+        
+        document.querySelector('tr').addEventListener('click', (event) => {
+            console.log('tr을 클릭했습니다.');
+            console.log(event.target);
+            console.log(event.currentTarget);
+        });
+
+        document.querySelector('table').addEventListener('click', (event) => {
+            console.log('table을 클릭했습니다.');
+            console.log(event.target);
+            console.log(event.currentTarget);
+        });
+
+    </script>
+</body>
+</html>
