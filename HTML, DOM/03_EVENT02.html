@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div><span id="order">1</span>번째 참가자</div>
+    <div>제시어: <span id="word"></span></div>
+    <input type="text">
+
+    <button>입력</button>
+
+    <script>
+        
+        // 키보드 이벤트
+        window.addEventListener('keyup', (event) => {
+            console.log('keyup', event); // event 매개변수에는 누른 키와 관련된 정보가 들어있음.
+        });
+        
+        window.addEventListener('keydown', (event) => {
+            console.log('keydown!!', event);
+        });
+
+        // 마우스 이벤트
+        window.addEventListener('mousedown', (event) => {
+            console.log('mousedown', event);
+        });
+
+        window.addEventListener('mousemove', (event) => {
+            console.log('mousemove', event);
+        });
+
+        window.addEventListener('mouseup', (event) => {
+            console.log('mouseup', event);
+        });
+
+        
+
+    </script>
+</body>
+</html>
