@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <table border = "1">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+    </table>
+
+    <script>
+        // 이벤트 캡쳐링이란? 이벤트가 자식 태그로 전파되어 내려가는 현상
+        // addEventListener의 세번째 인수로 true을 넣으면 이벤트가 부모 태그에서 자식 태그로 전파됨.
+        document.querySelector('td').addEventListener('click', (event) => {
+            console.log('td를 클릭했습니다.');
+            console.log(event.target); 
+            console.log(event.currentTarget); 
+        }, true);
+        
+        document.querySelector('tr').addEventListener('click', (event) => {
+            console.log('tr을 클릭했습니다.');
+            console.log(event.target);
+            console.log(event.currentTarget);
+        }, true);
+
+        document.querySelector('table').addEventListener('click', (event) => {
+            console.log('table을 클릭했습니다.');
+            console.log(event.target);
+            console.log(event.currentTarget);
+        }, true);
+
+    </script>
+</body>
+</html>
