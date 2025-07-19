@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div><span id="order">1</span>번째 참가자</div>
+    <div>제시어: <span id="word"></span></div>
+    <input type="text">
+
+    <button>입력</button>
+    <button class="hello">버튼2</button>
+    <button class="hello">버튼3</button>
+
+    <script>
+        // $는 태그 저장 변수, 반드시 붙여야하는건 아니지만 식별을 위해 붙임
+        // document 객체를 통해 HTML태그 선택 가능
+        const $input = document.querySelector('input'); // 첫번째 input의 태그 선택 
+        console.log($input); // <input type="text"> 출력
+        
+        const $button = document.querySelector('button'); // 첫번째 button의 태그 선택
+        console.log($button); // <button>입력</button> 출력
+
+        const $$buttons = document.querySelectorAll('button'); // 여러 개의 태그 선택
+        console.log($$buttons); // NodeList에 저장
+
+        const $order = document.querySelector('#order'); // 특정 태그 선택하기: #
+        console.log($order);
+
+        // -------------------------------------------------------------------------------------------
+
+        // id: 고유 식별자 → 하나만 써야 함 
+        // class: 공통 속성 그룹 → 여러 요소에 써도 됨
+        const $$buttons2 = document.querySelectorAll('.hello'); // class 속성으로 여러 태그 선택
+        console.log($$buttons2);
+
+        const $span = document.querySelector('div span'); // 태그 안의 태그 선택
+        console.log($span);
+
+        // -------------------------------------------------------------------------------------------
+
+        /* <div><span id="order">1</span>번째 참가자</div> */
+        // textContent, innerHTML, typeof
+        console.log($order.textContent); // '1' 출력
+        $order.textContent = 2; // 태그 내부의 문자열을 '2'로 변경
+        console.log(typeof $order.textContent); // typeof을 통해 자료형 확인
+
+        const $div = document.querySelector('div');
+        console.log($div.textContent); // '2번째 참가자' 출력
+        console.log($div.innerHTML); // '<span id="order">2</span>번째 참가자' 출력. 내부의 HTML 태그까지 가져옴
+
+        // -------------------------------------------------------------------------------------------
+
+        // 3초뒤에 화면이 바뀜
+        console.log("3초뒤에 화면이 바뀝니다.");
+        setTimeout(() => {
+            $div.innerHTML = ''; // 첫번째 div 태그를 삭제
+            $button.innerHTML = '<b>굵게</b>'; // button 태그의 글자를 굵게
+            console.log("화면이 바뀌었습니다.");
+        }, 3000);
+        
+        // NodeList의 버튼 지우기
+        setTimeout(() => {
+            $$buttons2.forEach((btn) => {
+                btn.remove(); // 버튼 삭제
+            });
+        }, 1500);
+
+        // -------------------------------------------------------------------------------------------
+        
+        // 입력 태그의 값 가져와 변경하기
+        const $input2 = document.querySelector('input');
+        $input2.value = 123; // .value : 입력창의 값을 가져옴
+        $input.focus(); // 입력창을 하이라이트함
+
+        // 내부의 값을 가져올 때
+        // input, select, textarea : value 사용
+        // button, div, span : textContent 사용
+    </script>
+</body>
+</html>

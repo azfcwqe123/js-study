@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+</head>
+<body>
+    <input type="hidden" name="at" value="null">
+
+    <div class="abcd"></div>
+
+    <script>
+
+        // input 요소 속성 접근
+        const inputElem = document.querySelector('input');
+        console.log(inputElem.type);   // "hidden"
+        console.log(inputElem.name);   // "at"
+        console.log(inputElem.value);  // "null"
+
+        // div 요소 클래스 조작
+        const elem = document.querySelector('div');
+
+        elem.className = 'wow';  // 기존 클래스 모두 제거하고 'wow' 추가
+        elem.classList.add('hello', 'hi', 'hello', 'bye');  // 여러 클래스 추가
+        elem.classList.replace('bye', 'seeu');     // 'bye' → 'seeu'
+        elem.classList.remove('bye');             // 'bye' 제거
+
+        console.log(elem.classList.contains('wow')); // 
+
+        console.log(elem.className);  // "wow hello hi seeu"
+    </script>
+
+</body>
+</html>

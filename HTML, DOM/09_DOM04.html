@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // 새로운 태그 만들기
+        const $button = document.createElement('button'); // 버튼 태그를 새로 생성(아직 화면엔 안보임)
+        $button.classList.add('login'); // <button class="login"></button>
+        $button.style.fontSize = '15px'; // 버튼의 글자 크기 설정
+        $button.textContent = 'button'; // 버튼 안에 보이는 텍스트 내용을 "button"으로 설정
+        document.body.append($button); // 생성한 버튼을 <body>의 맨 끝에 추가함.
+
+        // 4행 4열의 테이블을 만들기
+
+        const $table = document.createElement('table');
+        $table.border = 1;
+
+        for(let i=0; i<4; i++) {
+            const $tr = document.createElement('tr');
+            $table.append($tr);
+            for(let j=0; j<4; j++) {
+                const $td = document.createElement('td');
+                $td.textContent = '칸';
+                $tr.append('td');
+            }
+        }
+
+        document.body.append($table);
+
+        // -------------------------------------------------------------------------------------------
+
+        // documentFragment : 메모리에 존재하는 가상의 DOM 조각, DocumentFragment 안에 먼저 요소들을 다 넣고, 한 번에 진짜 DOM에 추가해서 성능을 개선
+
+        const $button2 = document.createElement('button');
+        const $img = document.createElement('img');
+        const $fragment = document.createDocumentFragment();
+        $fragment.append($button2, '텍스트', $img);
+        document.body.append($fragment); // button, 텍스트, img가 body에 추가됨.
+
+     </script>
+</body>
+</html>
