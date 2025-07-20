@@ -26,6 +26,11 @@
         console.log(document.querySelector('td').parentNode); // tr
         console.log(document.querySelector('tr').children); // [td, td, td]
         
+        // 1.document.querySelector('table')
+	    // 페이지에서 첫 번째 <table> 요소를 가져온다.
+     	// 2. .querySelectorAll('td')
+	    // 그 <table> 안에서 모든 <td> 요소들을 한 번에 가져온다.
+        
         console.log(document.querySelector('table').querySelectorAll('td')); // querySelctorAll() -> HTMLCollection 대신 NodeList[유사 배열 객체] 반환 
 
         // -------------------------------------------------------------------------------------------

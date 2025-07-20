@@ -12,6 +12,12 @@
         </div>
     </header>
 
+
+//	1.	사용자가 <button>을 클릭함
+//	2.	브라우저는 <button> → <div> → <header> 순으로 이벤트를 위로 전파
+//	3.	<header>에 등록된 click 이벤트 리스너가 실행됨
+//	4.	그래서 console.log()가 호출
+    
     <script>
         document.querySelector('header').addEventListener('click', () => {
             console.log('hello, event bubbling');
